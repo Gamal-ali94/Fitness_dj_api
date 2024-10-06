@@ -53,7 +53,7 @@ class User(AbstractUser):
     """
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=250, unique=True)
-    bio = models.TextField(max_length=250, blank=True, null=True)
+    bio = models.TextField(max_length=250, blank=True, null=True, default='No bio provided')
     profile_picture = models.ImageField(blank=True, null=True)
 
     objects = UserManager()

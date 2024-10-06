@@ -40,7 +40,9 @@ class ListCreateActivityView(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
 
-    filterset_fields = ('activity_type',)
+    filterset_fields = {'activity_type': ['exact', 'icontains'],
+                        'date__date': ['gte', 'lte']
+                        }
     ordering_fields = ['distance', 'duration', 'calories_burned']
 
     def get_queryset(self):
