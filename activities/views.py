@@ -11,23 +11,6 @@ from notifications.models import Notification
 
 # Create your views here.
 
-# class CreateActivityView(generics.CreateAPIView):
-#     queryset = Activity.objects.all()
-#     serializer_class = ActivitySerializer
-#     permission_classes = [permissions.IsAuthenticated]
-#
-#     def perform_create(self, serializer):
-#         serializer.save(user=self.request.user)
-#
-#
-# class ListActivityView(generics.ListAPIView):
-#     serializer_class = ActivitySerializer
-#     permission_classes = [permissions.IsAuthenticated]
-#
-#     def get_queryset(self):
-#         user = self.request.user
-#         return Activity.objects.filter(user=user)
-
 
 class ListCreateActivityView(generics.ListCreateAPIView):
     """
